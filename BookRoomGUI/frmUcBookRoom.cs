@@ -47,12 +47,16 @@ namespace BookRoomGUI
             foreach (DataRow row in tblrooms.Rows)
             {
                 Button button = new Button();
+                button.Name = "btn" + row[1].ToString();
                 button.Width = 80;
                 button.Height = 50;
                 button.Text = row[1].ToString() + Environment.NewLine + row[4].ToString();
                 button.FlatStyle = FlatStyle.Flat;
                 button.FlatAppearance.BorderSize = 0;
-
+                //
+                button.Click += click_Room;
+                button.Tag = row[0].ToString();
+                //
                 switch (row[3].ToString())
                 {
                     case "0":
@@ -67,6 +71,22 @@ namespace BookRoomGUI
             }
         }
         #endregion
+
+        void showAddBookRoom(Guid id)
+        {
+            frmAddBookRoom add = new frmAddBookRoom();
+            Room room = new Room();
+            var roomDetail =  room.GetRoom(id);
+            
+            add.Show();
+        }
+
+        void click_Room(object sender, EventArgs e)
+        {
+            Button row = (sender as Button);
+            Guid id = new Guid(row.Tag.ToString());
+            showAddBookRoom(id);
+        }
 
         private void btnFilterRoom_Click(object sender, EventArgs e)
         {
