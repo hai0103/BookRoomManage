@@ -74,7 +74,7 @@ namespace BookRoomManage
         /// <returns></returns>
         public int Create()
         {
-            Deposit = CalculateDeposit();
+            
             int result = Provider.Instance.ExcuteNonQuery("PROC_InsertBookRoom", this);
             return result;
         }
@@ -83,15 +83,27 @@ namespace BookRoomManage
         /// Tính tiền đặt cọc
         /// </summary>
         /// <returns></returns>
-        public decimal CalculateDeposit()
+        public decimal CalculateDeposit(Guid roomID,DateTime startDate,DateTime endDate)
         {
             Room room = new Room();
-            int noDays = (int)Math.Ceiling((EndDate - StartDate).TotalDays);
-            decimal price = room.GetPrice(RoomID);
+            int noDays = (int)Math.Ceiling((endDate - startDate).TotalDays);
+            decimal price = room.GetPrice(roomID);
             decimal deposit = (price * noDays * 60)/100;
             return deposit; 
         }
 
+        /// <summary>
+        /// Tính chi phí
+        /// </summary>
+        /// <returns></returns>
+        public decimal CalculateCost(Guid roomID, DateTime startDate, DateTime endDate)
+        {
+            Room room = new Room();
+            int noDays = (int)Math.Ceiling((endDate - startDate).TotalDays);
+            decimal price = room.GetPrice(roomID);
+            decimal cost = price * noDays;
+            return cost;
+        }
         #endregion
     }
 }

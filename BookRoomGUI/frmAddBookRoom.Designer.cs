@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DateTimePicker dateTimePicker2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddBookRoom));
             this.dtStartDate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -38,10 +37,11 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAddBookRoom = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtRoomID = new System.Windows.Forms.TextBox();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.dtEndDate = new System.Windows.Forms.DateTimePicker();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCost = new System.Windows.Forms.TextBox();
+            this.txtDeposit = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtRoomName = new System.Windows.Forms.TextBox();
             this.txtRoomNo = new System.Windows.Forms.TextBox();
@@ -76,7 +76,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtCreateDate = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -92,17 +92,6 @@
             this.dtStartDate.Size = new System.Drawing.Size(125, 26);
             this.dtStartDate.TabIndex = 9;
             this.dtStartDate.Value = new System.DateTime(2019, 11, 17, 0, 0, 0, 0);
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new System.Drawing.Point(485, 104);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new System.Drawing.Size(125, 26);
-            dateTimePicker2.TabIndex = 0;
-            dateTimePicker2.UseWaitCursor = true;
-            dateTimePicker2.Value = new System.DateTime(2019, 11, 17, 0, 0, 0, 0);
             // 
             // panel1
             // 
@@ -169,7 +158,6 @@
             // 
             this.btnAddBookRoom.BackColor = System.Drawing.Color.White;
             this.btnAddBookRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddBookRoom.Enabled = false;
             this.btnAddBookRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBookRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddBookRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -179,17 +167,19 @@
             this.btnAddBookRoom.TabIndex = 18;
             this.btnAddBookRoom.Text = "Book room";
             this.btnAddBookRoom.UseVisualStyleBackColor = false;
+            this.btnAddBookRoom.Click += new System.EventHandler(this.btnAddBookRoom_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.dtCreateDate);
+            this.panel3.Controls.Add(this.txtRoomID);
             this.panel3.Controls.Add(this.txtCustomerID);
             this.panel3.Controls.Add(this.dtEndDate);
-            this.panel3.Controls.Add(dateTimePicker2);
             this.panel3.Controls.Add(this.dtStartDate);
-            this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.txtCost);
+            this.panel3.Controls.Add(this.txtDeposit);
             this.panel3.Controls.Add(this.txtPrice);
             this.panel3.Controls.Add(this.txtRoomName);
             this.panel3.Controls.Add(this.txtRoomNo);
@@ -232,6 +222,15 @@
             this.panel3.Size = new System.Drawing.Size(698, 466);
             this.panel3.TabIndex = 1;
             // 
+            // txtRoomID
+            // 
+            this.txtRoomID.Location = new System.Drawing.Point(154, 43);
+            this.txtRoomID.Multiline = true;
+            this.txtRoomID.Name = "txtRoomID";
+            this.txtRoomID.Size = new System.Drawing.Size(184, 28);
+            this.txtRoomID.TabIndex = 18;
+            this.txtRoomID.Visible = false;
+            // 
             // txtCustomerID
             // 
             this.txtCustomerID.Location = new System.Drawing.Point(154, 82);
@@ -250,27 +249,27 @@
             this.dtEndDate.Size = new System.Drawing.Size(125, 26);
             this.dtEndDate.TabIndex = 10;
             // 
-            // textBox6
+            // txtCost
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(485, 372);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 28);
-            this.textBox6.TabIndex = 14;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCost.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCost.Location = new System.Drawing.Point(485, 372);
+            this.txtCost.Multiline = true;
+            this.txtCost.Name = "txtCost";
+            this.txtCost.Size = new System.Drawing.Size(125, 28);
+            this.txtCost.TabIndex = 14;
+            this.txtCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox3
+            // txtDeposit
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(485, 411);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 28);
-            this.textBox3.TabIndex = 16;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDeposit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeposit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeposit.Location = new System.Drawing.Point(485, 411);
+            this.txtDeposit.Multiline = true;
+            this.txtDeposit.Name = "txtDeposit";
+            this.txtDeposit.Size = new System.Drawing.Size(125, 28);
+            this.txtDeposit.TabIndex = 16;
+            this.txtDeposit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPrice
             // 
@@ -375,6 +374,7 @@
             this.btnCalcCost.Size = new System.Drawing.Size(27, 28);
             this.btnCalcCost.TabIndex = 15;
             this.btnCalcCost.UseVisualStyleBackColor = false;
+            this.btnCalcCost.Click += new System.EventHandler(this.btnCalcCost_Click);
             // 
             // btnCalcDeposit
             // 
@@ -664,6 +664,15 @@
             this.button1.Text = "Book room";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // dtCreateDate
+            // 
+            this.dtCreateDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtCreateDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtCreateDate.Location = new System.Drawing.Point(485, 102);
+            this.dtCreateDate.Name = "dtCreateDate";
+            this.dtCreateDate.Size = new System.Drawing.Size(125, 26);
+            this.dtCreateDate.TabIndex = 19;
+            // 
             // frmAddBookRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -713,7 +722,7 @@
         private System.Windows.Forms.DateTimePicker dtEndDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDeposit;
         private System.Windows.Forms.TextBox txtRoomName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -721,7 +730,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAddBookRoom;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtCost;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtCMT;
         private System.Windows.Forms.TextBox txtPhone;
@@ -740,5 +749,7 @@
         private System.Windows.Forms.Button btnCalcCost;
         private System.Windows.Forms.Button btnCalcDeposit;
         private System.Windows.Forms.DateTimePicker dtStartDate;
+        private System.Windows.Forms.TextBox txtRoomID;
+        private System.Windows.Forms.DateTimePicker dtCreateDate;
     }
 }

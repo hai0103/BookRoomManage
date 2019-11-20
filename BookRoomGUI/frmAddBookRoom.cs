@@ -13,6 +13,7 @@ namespace BookRoomGUI
 {
     public partial class frmAddBookRoom : Form
     {
+
         public frmAddBookRoom()
         {
             InitializeComponent();
@@ -31,7 +32,10 @@ namespace BookRoomGUI
             pi = roomDetail.GetType().GetProperty("TypeRoomPrice");
             text = (pi.GetValue(roomDetail, null)).ToString();
             txtPrice.Text = text;
-
+            pi = roomDetail.GetType().GetProperty("RoomID");
+            text = (pi.GetValue(roomDetail, null)).ToString();
+            txtRoomID.Text = text;
+            
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -47,6 +51,8 @@ namespace BookRoomGUI
         private void frmBookRoom_Load(object sender, EventArgs e)
         {
             this.ActiveControl=txtCustomerNo;
+            dtCreateDate.Value = DateTime.Now;
+            txtBookRoomNo.Text = Provider.Instance.ExcuteScalar("PROC_AutoGenerateBookRoomNo").ToString();
         }
 
         private void button2_Focus(object sender, EventArgs e)
@@ -73,9 +79,43 @@ namespace BookRoomGUI
         private void btnCalcDeposit_Click(object sender, EventArgs e)
         {
             BookRoom bookRoom = new BookRoom();
-            bookRoom.StartDate = Convert.ToDateTime(dtStartDate.Value.ToString("MM/dd/yyyy"));
-            bookRoom.EndDate = Convert.ToDateTime(dtEndDate.Value.ToString("MM/dd/yyyy"));
-            
+            DateTime startDate = new DateTime(dtStartDate.Value.Year, dtStartDate.Value.Month, dtStartDate.Value.Day);
+            DateTime endDate = new DateTime(dtEndDate.Value.Year, dtEndDate.Value.Month, dtEndDate.Value.Day);
+            Guid roomID = new Guid(txtRoomID.Text);
+            txtDeposit.Text = bookRoom.CalculateDeposit(roomID, startDate, endDate).ToString();
+        }
+
+        private void btnCalcCost_Click(object sender, EventArgs e)
+        {
+            BookRoom bookRoom = new BookRoom();
+            DateTime startDate = new DateTime(dtStartDate.Value.Year, dtStartDate.Value.Month, dtStartDate.Value.Day);
+            DateTime endDate = new DateTime(dtEndDate.Value.Year, dtEndDate.Value.Month, dtEndDate.Value.Day);
+            Guid roomID = new Guid(txtRoomID.Text);
+            txtCost.Text = bookRoom.CalculateCost(roomID, startDate, endDate).ToString();
+        }
+
+        private void btnAddBookRoom_Click(object sender, EventArgs e)
+        {
+            string bookRoomNo = txtBookRoomNo.Text;
+            DateTime createDate = new DateTime(dtCreateDate.Value.Year, dtCreateDate.Value.Month, dtCreateDate.Value.Day);
+            DateTime startDate = new DateTime(dtStartDate.Value.Year, dtStartDate.Value.Month, dtStartDate.Value.Day);
+            DateTime endDate = new DateTime(dtEndDate.Value.Year, dtEndDate.Value.Month, dtEndDate.Value.Day);
+            decimal deposit = decimal.Parse(txtDeposit.Text);
+            Guid roomID = new Guid(txtRoomID.Text);
+            Guid customerID = new Guid(txtCustomerID.Text);
+            BookRoom bookRoom = new BookRoom(bookRoomNo, createDate, startDate, endDate, deposit, roomID, customerID,null);
+
+            int result = bookRoom.Create();
+            if (result < 0)
+            {
+                MessageBox.Show("Thất bại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+
+            DialogResult msg = MessageBox.Show("Thành công!");
+            if (msg == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
     }
 }

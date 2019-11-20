@@ -10,7 +10,7 @@ namespace BookRoomManage
     public class Provider
     {
         #region property
-        private static string _connectionString = @"Data Source=DESKTOP-JJ9G0NT\SQLEXPRESS01;Initial Catalog=BookRoom_Manage;Integrated Security=True";
+        private static string _connectionString = @"Data Source=ADMIN-PC\NGUYENHUUNAM;Initial Catalog=BookRoom_Manage;Integrated Security=True";
 
         private SqlConnection _connection;
 
@@ -58,7 +58,6 @@ namespace BookRoomManage
             DataTable dataTable = new DataTable();
 
             adapter.Fill(dataTable);
-            _connection.Close();
 
             return dataTable;
         }
@@ -72,6 +71,7 @@ namespace BookRoomManage
         public int ExcuteNonQuery(string storeName, object parameters = null)
         {
             int result = -1;
+            _sqlCommand.Parameters.Clear();
             _sqlCommand.CommandText = storeName;
             if (parameters != null)
             {   
@@ -83,7 +83,6 @@ namespace BookRoomManage
                 }
                 result = _sqlCommand.ExecuteNonQuery();
             }
-
             return result;
         }
 
@@ -96,6 +95,7 @@ namespace BookRoomManage
         public object ExcuteScalar(string storeName, object parameters = null)
         {
             object result = -1;
+            _sqlCommand.Parameters.Clear();
             _sqlCommand.CommandText = storeName;
             if (parameters != null)
             {
@@ -105,9 +105,8 @@ namespace BookRoomManage
                     var parameterValue = parameters.GetType().GetProperty(item).GetValue(parameters, null);
                     _sqlCommand.Parameters.AddWithValue("@" + item, parameterValue);
                 }
-                result = _sqlCommand.ExecuteScalar();
             }
-
+            result = _sqlCommand.ExecuteScalar();
             return result;
         }
         #endregion
