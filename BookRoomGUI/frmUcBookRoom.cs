@@ -75,9 +75,8 @@ namespace BookRoomGUI
         void showAddBookRoom(Guid id)
         {
             frmAddBookRoom add = new frmAddBookRoom();
-            Room room = new Room();
-            var roomDetail =  room.GetRoom(id);
             
+            add.fillContentRoom(id);
             add.Show();
         }
 
