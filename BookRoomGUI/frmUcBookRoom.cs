@@ -26,9 +26,18 @@ namespace BookRoomGUI
         public frmUcBookRoom()
         {
             InitializeComponent();
+            loadAllRoom();
         }
 
         #region Method
+
+        public void loadAllRoom()
+        {
+            Room room = new Room();
+            DataTable allRoom = room.GetRooms();
+            loadRoomList(allRoom);
+        }
+
         public void loadRoomList(DataTable dataTable)
         {
 
@@ -47,10 +56,10 @@ namespace BookRoomGUI
                 switch (row[3].ToString())
                 {
                     case "0":
-                        button.BackColor = ColorTranslator.FromHtml("#4ceb0b");
+                        button.BackColor = ColorTranslator.FromHtml("#a8e6cf");
                         break;
                     default:
-                        button.BackColor = ColorTranslator.FromHtml("#eb190b");
+                        button.BackColor = ColorTranslator.FromHtml("#ff6f69");
                         break;
 
                 }
@@ -59,7 +68,7 @@ namespace BookRoomGUI
         }
         #endregion
 
-        private void btnAddBookRoom_Click(object sender, EventArgs e)
+        private void btnFilterRoom_Click(object sender, EventArgs e)
         {
             Room room = new Room();
             int typeRoom = 0;

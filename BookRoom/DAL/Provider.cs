@@ -10,7 +10,7 @@ namespace BookRoomManage
     public class Provider
     {
         #region property
-        private static string _connectionString = @"Data Source=ADMIN-PC\NGUYENHUUNAM;Initial Catalog=BookRoom_Manage;Integrated Security=True";
+        private static string _connectionString = @"Data Source=DESKTOP-JJ9G0NT\SQLEXPRESS01;Initial Catalog=BookRoom_Manage;Integrated Security=True";
 
         private SqlConnection _connection;
 

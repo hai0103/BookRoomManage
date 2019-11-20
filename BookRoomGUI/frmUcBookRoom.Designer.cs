@@ -1,4 +1,6 @@
-﻿namespace BookRoomGUI
+﻿using System.Drawing;
+
+namespace BookRoomGUI
 {
     partial class frmUcBookRoom
     {
@@ -32,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAddBookRoom = new System.Windows.Forms.Button();
+            this.btnFilterRoom = new System.Windows.Forms.Button();
             this.dtStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtEndDate = new System.Windows.Forms.DateTimePicker();
             this.flpRooms = new System.Windows.Forms.FlowLayoutPanel();
@@ -54,6 +56,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(175, 28);
             this.comboBox1.TabIndex = 13;
+            this.comboBox1.Text = "Tất cả";
             // 
             // label1
             // 
@@ -85,20 +88,20 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "to";
             // 
-            // btnAddBookRoom
+            // btnFilterRoom
             // 
-            this.btnAddBookRoom.BackColor = System.Drawing.Color.White;
-            this.btnAddBookRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddBookRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddBookRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddBookRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddBookRoom.Location = new System.Drawing.Point(684, 25);
-            this.btnAddBookRoom.Name = "btnAddBookRoom";
-            this.btnAddBookRoom.Size = new System.Drawing.Size(121, 32);
-            this.btnAddBookRoom.TabIndex = 19;
-            this.btnAddBookRoom.Text = "Filter";
-            this.btnAddBookRoom.UseVisualStyleBackColor = false;
-            this.btnAddBookRoom.Click += new System.EventHandler(this.btnAddBookRoom_Click);
+            this.btnFilterRoom.BackColor = System.Drawing.Color.White;
+            this.btnFilterRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilterRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilterRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilterRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFilterRoom.Location = new System.Drawing.Point(684, 25);
+            this.btnFilterRoom.Name = "btnFilterRoom";
+            this.btnFilterRoom.Size = new System.Drawing.Size(121, 32);
+            this.btnFilterRoom.TabIndex = 19;
+            this.btnFilterRoom.Text = "Filter";
+            this.btnFilterRoom.UseVisualStyleBackColor = false;
+            this.btnFilterRoom.Click += new System.EventHandler(this.btnFilterRoom_Click);
             // 
             // dtStartDate
             // 
@@ -122,6 +125,7 @@
             // 
             // flpRooms
             // 
+            this.flpRooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(244)))), ((int)(((byte)(255)))));
             this.flpRooms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flpRooms.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flpRooms.Location = new System.Drawing.Point(0, 93);
@@ -133,11 +137,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.flpRooms);
             this.Controls.Add(this.dtEndDate);
             this.Controls.Add(this.dtStartDate);
-            this.Controls.Add(this.btnAddBookRoom);
+            this.Controls.Add(this.btnFilterRoom);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -154,7 +158,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnAddBookRoom;
+        private System.Windows.Forms.Button btnFilterRoom;
         private System.Windows.Forms.DateTimePicker dtStartDate;
         private System.Windows.Forms.DateTimePicker dtEndDate;
         private System.Windows.Forms.FlowLayoutPanel flpRooms;

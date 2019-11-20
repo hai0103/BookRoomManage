@@ -1,4 +1,6 @@
-﻿namespace BookRoomGUI
+﻿using System.Drawing;
+
+namespace BookRoomGUI
 {
     partial class frmMain
     {
@@ -31,18 +33,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.btnBookRoom = new System.Windows.Forms.Button();
-            this.btnPayment = new System.Windows.Forms.Button();
-            this.btnUsingService = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnUsingService = new System.Windows.Forms.Button();
+            this.btnPayment = new System.Windows.Forms.Button();
+            this.btnBookRoom = new System.Windows.Forms.Button();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 551);
@@ -52,6 +55,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -60,73 +64,9 @@
             this.panel2.Size = new System.Drawing.Size(1081, 40);
             this.panel2.TabIndex = 1;
             // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.btnUsingService);
-            this.panel3.Controls.Add(this.btnPayment);
-            this.panel3.Controls.Add(this.btnBookRoom);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 40);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 511);
-            this.panel3.TabIndex = 2;
-            // 
-            // panelMain
-            // 
-            this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelMain.Location = new System.Drawing.Point(206, 40);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(875, 511);
-            this.panelMain.TabIndex = 3;
-            // 
-            // btnBookRoom
-            // 
-            this.btnBookRoom.BackColor = System.Drawing.Color.White;
-            this.btnBookRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBookRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBookRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBookRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBookRoom.Location = new System.Drawing.Point(39, 84);
-            this.btnBookRoom.Name = "btnBookRoom";
-            this.btnBookRoom.Size = new System.Drawing.Size(127, 98);
-            this.btnBookRoom.TabIndex = 19;
-            this.btnBookRoom.Text = "Book Room";
-            this.btnBookRoom.UseVisualStyleBackColor = false;
-            this.btnBookRoom.Click += new System.EventHandler(this.btnBookRoom_Click);
-            // 
-            // btnPayment
-            // 
-            this.btnPayment.BackColor = System.Drawing.Color.White;
-            this.btnPayment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPayment.Location = new System.Drawing.Point(39, 215);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(127, 98);
-            this.btnPayment.TabIndex = 19;
-            this.btnPayment.Text = "Payment";
-            this.btnPayment.UseVisualStyleBackColor = false;
-            // 
-            // btnUsingService
-            // 
-            this.btnUsingService.BackColor = System.Drawing.Color.White;
-            this.btnUsingService.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUsingService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsingService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsingService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsingService.Location = new System.Drawing.Point(39, 340);
-            this.btnUsingService.Name = "btnUsingService";
-            this.btnUsingService.Size = new System.Drawing.Size(127, 98);
-            this.btnUsingService.TabIndex = 19;
-            this.btnUsingService.Text = "Using Service";
-            this.btnUsingService.UseVisualStyleBackColor = false;
-            // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -140,11 +80,83 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnUsingService);
+            this.panel3.Controls.Add(this.btnPayment);
+            this.panel3.Controls.Add(this.btnBookRoom);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 40);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 511);
+            this.panel3.TabIndex = 2;
+            // 
+            // btnUsingService
+            // 
+            this.btnUsingService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(255)))));
+            this.btnUsingService.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUsingService.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(121)))), ((int)(((byte)(128)))));
+            this.btnUsingService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsingService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsingService.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btnUsingService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsingService.Location = new System.Drawing.Point(39, 340);
+            this.btnUsingService.Name = "btnUsingService";
+            this.btnUsingService.Size = new System.Drawing.Size(127, 98);
+            this.btnUsingService.TabIndex = 19;
+            this.btnUsingService.Text = "Using Service";
+            this.btnUsingService.UseVisualStyleBackColor = false;
+            // 
+            // btnPayment
+            // 
+            this.btnPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(255)))));
+            this.btnPayment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPayment.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(121)))), ((int)(((byte)(128)))));
+            this.btnPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayment.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btnPayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPayment.Location = new System.Drawing.Point(39, 215);
+            this.btnPayment.Name = "btnPayment";
+            this.btnPayment.Size = new System.Drawing.Size(127, 98);
+            this.btnPayment.TabIndex = 19;
+            this.btnPayment.Text = "Payment";
+            this.btnPayment.UseVisualStyleBackColor = false;
+            // 
+            // btnBookRoom
+            // 
+            this.btnBookRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(255)))));
+            this.btnBookRoom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBookRoom.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(121)))), ((int)(((byte)(128)))));
+            this.btnBookRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBookRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBookRoom.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btnBookRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBookRoom.Location = new System.Drawing.Point(39, 84);
+            this.btnBookRoom.Name = "btnBookRoom";
+            this.btnBookRoom.Size = new System.Drawing.Size(127, 98);
+            this.btnBookRoom.TabIndex = 19;
+            this.btnBookRoom.Text = "Book Room";
+            this.btnBookRoom.UseVisualStyleBackColor = false;
+            this.btnBookRoom.Click += new System.EventHandler(this.btnBookRoom_Click);
+            // 
+            // panelMain
+            // 
+            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelMain.Location = new System.Drawing.Point(206, 40);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(875, 511);
+            this.panelMain.TabIndex = 3;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1081, 592);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel3);
