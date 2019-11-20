@@ -104,6 +104,7 @@ namespace BookRoomManage
         /// <returns></returns>
         public DataTable FilterRoomByType(int typeRoomID, DateTime start, DateTime end)
         {
+            
             return Provider.Instance.ExcuteQuery("PROC_FilterRoomsByType", new { TypeRoomID = typeRoomID, StartDate = start, EndDate = end });
         }
         #endregion

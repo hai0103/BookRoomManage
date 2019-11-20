@@ -10,3 +10,9 @@ D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoom
 D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoomManage.csproj.CoreCompileInputs.cache
 D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoom.dll
 D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoom.pdb
+C:\Users\admin\Desktop\New folder\BookRoomManage\BookRoom\bin\Debug\BookRoom.dll
+C:\Users\admin\Desktop\New folder\BookRoomManage\BookRoom\bin\Debug\BookRoom.pdb
+C:\Users\admin\Desktop\New folder\BookRoomManage\BookRoom\obj\Debug\BookRoomManage.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\New folder\BookRoomManage\BookRoom\obj\Debug\BookRoomManage.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\New folder\BookRoomManage\BookRoom\obj\Debug\BookRoom.dll
+C:\Users\admin\Desktop\New folder\BookRoomManage\BookRoom\obj\Debug\BookRoom.pdb

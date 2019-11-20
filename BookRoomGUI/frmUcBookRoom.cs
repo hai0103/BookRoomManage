@@ -26,20 +26,21 @@ namespace BookRoomGUI
         public frmUcBookRoom()
         {
             InitializeComponent();
-            loadRoomList();
         }
 
         #region Method
-        public void loadRoomList()
+        public void loadRoomList(DataTable dataTable)
         {
+
             Room room = new Room();
-            DataTable tblrooms = room.FilterRoomByType(1, new DateTime(2019, 11, 20), new DateTime(2019, 11, 24));
+            DataTable tblrooms = dataTable;
+            flpRooms.Controls.Clear();
             foreach (DataRow row in tblrooms.Rows)
             {
                 Button button = new Button();
                 button.Width = 80;
                 button.Height = 50;
-                button.Text = row[1].ToString() + Environment.NewLine + row[0].ToString();
+                button.Text = row[1].ToString() + Environment.NewLine + row[4].ToString();
                 button.FlatStyle = FlatStyle.Flat;
                 button.FlatAppearance.BorderSize = 0;
 
@@ -57,5 +58,45 @@ namespace BookRoomGUI
             }
         }
         #endregion
+
+        private void btnAddBookRoom_Click(object sender, EventArgs e)
+        {
+            Room room = new Room();
+            int typeRoom = 0;
+            DateTime startDate = new DateTime(dtStartDate.Value.Year, dtStartDate.Value.Month, dtStartDate.Value.Day);
+            DateTime endDate = new DateTime(dtEndDate.Value.Year, dtEndDate.Value.Month, dtEndDate.Value.Day);
+            switch (comboBox1.Text)
+            {
+                case "Phòng phổ thông đơn":
+                    typeRoom = 1;
+                    loadRoomList (room.FilterRoomByType(typeRoom,startDate,endDate));
+                    break;
+                case "Phòng phổ thông đôi":
+                    typeRoom = 2;
+                    loadRoomList(room.FilterRoomByType(typeRoom, startDate, endDate));
+                    break;
+                case "Phòng thương gia đơn":
+                    typeRoom = 3;
+                    loadRoomList(room.FilterRoomByType(typeRoom, startDate, endDate));
+                    break;
+                case "Phòng thương gia đôi":
+                    typeRoom = 4;
+                    loadRoomList(room.FilterRoomByType(typeRoom, startDate, endDate));
+                    break;
+                case "Phòng cao cấp đơn":
+                    typeRoom = 5;
+                    loadRoomList(room.FilterRoomByType(typeRoom, startDate, endDate));
+                    break;
+                case "Phòng cao cấp đôi":
+                    typeRoom = 6;
+                    loadRoomList(room.FilterRoomByType(typeRoom, startDate, endDate));
+                    break;
+                default:
+                    loadRoomList(room.FilterRoomByType(typeRoom, startDate, endDate));
+                    break;
+
+            }
+            
+        }
     }
 }

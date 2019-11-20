@@ -44,6 +44,7 @@ namespace BookRoomManage
         /// <returns></returns>
         public DataTable ExcuteQuery(string storeName, object parameters = null)
         {
+            _sqlCommand.Parameters.Clear();
             _sqlCommand.CommandText = storeName;
             if (parameters != null)
             {
