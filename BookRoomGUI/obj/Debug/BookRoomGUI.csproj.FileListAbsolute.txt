@@ -1,0 +1,27 @@
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoomGUI\bin\Debug\BookRoomGUI.exe.config
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoomGUI\bin\Debug\BookRoomGUI.exe
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoomGUI\bin\Debug\BookRoomGUI.pdb
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.frmLogin.resources
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.Properties.Resources.resources
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.exe
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.pdb
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.frmBookRoom.resources
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\bin\Debug\BookRoomGUI.exe.config
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\bin\Debug\BookRoomGUI.exe
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\bin\Debug\BookRoomGUI.pdb
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.csprojAssemblyReference.cache
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.frmAddBookRoom.resources
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.frmLogin.resources
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.frmMain.resources
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.frmUcBookRoom.resources
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.Properties.Resources.resources
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.csproj.GenerateResource.cache
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.csproj.CoreCompileInputs.cache
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.exe
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.pdb
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\bin\Debug\BookRoom.dll
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\bin\Debug\BookRoom.pdb
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoomGUI\obj\Debug\BookRoomGUI.csproj.CopyComplete

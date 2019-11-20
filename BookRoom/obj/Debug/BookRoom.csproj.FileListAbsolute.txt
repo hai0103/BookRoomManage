@@ -1,0 +1,5 @@
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoom\bin\Debug\BookRoom.dll
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoom\bin\Debug\BookRoom.pdb
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoom.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoom.dll
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoom.pdb

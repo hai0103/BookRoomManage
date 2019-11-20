@@ -1,0 +1,12 @@
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoomManage.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoomManage.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoom.dll
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoom.pdb
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoom\bin\Debug\BookRoom.dll
+C:\Users\admin\Desktop\BookRoomSystem\BookRoomSystem\BookRoom\bin\Debug\BookRoom.pdb
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoom\bin\Debug\BookRoom.dll
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoom\bin\Debug\BookRoom.pdb
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoomManage.csprojAssemblyReference.cache
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoomManage.csproj.CoreCompileInputs.cache
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoom.dll
+D:\Tai lieu\BookRoomT5\BookRoomSystem\BookRoomSystem\BookRoom\obj\Debug\BookRoom.pdb
