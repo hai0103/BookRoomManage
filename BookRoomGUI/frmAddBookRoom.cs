@@ -53,5 +53,21 @@ namespace BookRoomGUI
         {
             this.ActiveControl = txtCustomerNo;
         }
+
+        private void btnSearchCustomer_Click(object sender, EventArgs e)
+        {
+            string cmt = txtCustomerNo.Text;
+            Customer customer = new Customer();
+            Customer cus = customer.FindCustomerByCMT(cmt);
+            txtCustomerID.Text = cus.CustomerID.ToString();
+            txtCustomerNo.Text = cus.CustomerNo;
+            txtCustomerName.Text = cus.CustomerName;
+            txtGender.Text = cus.Gender.ToString();
+            txtBirthday.Text = cus.Birthday.ToString();
+            txtPhone.Text = cus.PhoneNumber;
+            txtCMT.Text = cus.IdentityCard;
+            txtEmail.Text = cus.Email;
+            txtNationality.Text = cus.Nationality;
+        }
     }
 }

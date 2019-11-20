@@ -52,7 +52,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnCreateNewCustomer = new System.Windows.Forms.Button();
+            this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.txtNationality = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtCMT = new System.Windows.Forms.TextBox();
@@ -201,7 +201,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.btnCreateNewCustomer);
+            this.panel3.Controls.Add(this.btnSearchCustomer);
             this.panel3.Controls.Add(this.txtNationality);
             this.panel3.Controls.Add(this.txtEmail);
             this.panel3.Controls.Add(this.txtCMT);
@@ -390,18 +390,19 @@
             this.button2.TabIndex = 17;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // btnCreateNewCustomer
+            // btnSearchCustomer
             // 
-            this.btnCreateNewCustomer.BackColor = System.Drawing.SystemColors.Window;
-            this.btnCreateNewCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreateNewCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateNewCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCreateNewCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateNewCustomer.Image")));
-            this.btnCreateNewCustomer.Location = new System.Drawing.Point(311, 125);
-            this.btnCreateNewCustomer.Name = "btnCreateNewCustomer";
-            this.btnCreateNewCustomer.Size = new System.Drawing.Size(27, 28);
-            this.btnCreateNewCustomer.TabIndex = 0;
-            this.btnCreateNewCustomer.UseVisualStyleBackColor = false;
+            this.btnSearchCustomer.BackColor = System.Drawing.SystemColors.Window;
+            this.btnSearchCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSearchCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchCustomer.Image")));
+            this.btnSearchCustomer.Location = new System.Drawing.Point(311, 125);
+            this.btnSearchCustomer.Name = "btnSearchCustomer";
+            this.btnSearchCustomer.Size = new System.Drawing.Size(27, 28);
+            this.btnSearchCustomer.TabIndex = 0;
+            this.btnSearchCustomer.UseVisualStyleBackColor = false;
+            this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click);
             // 
             // txtNationality
             // 
@@ -705,7 +706,7 @@
         private System.Windows.Forms.TextBox txtRoomNo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnCreateNewCustomer;
+        private System.Windows.Forms.Button btnSearchCustomer;
         private System.Windows.Forms.TextBox txtCustomerNo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
