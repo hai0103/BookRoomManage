@@ -91,6 +91,7 @@ namespace BookRoomManage
             decimal deposit = (price * noDays * 60)/100;
             return deposit; 
         }
+
         #endregion
     }
 }

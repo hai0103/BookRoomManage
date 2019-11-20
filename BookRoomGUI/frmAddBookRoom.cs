@@ -69,5 +69,13 @@ namespace BookRoomGUI
             txtEmail.Text = cus.Email;
             txtNationality.Text = cus.Nationality;
         }
+
+        private void btnCalcDeposit_Click(object sender, EventArgs e)
+        {
+            BookRoom bookRoom = new BookRoom();
+            bookRoom.StartDate = Convert.ToDateTime(dtStartDate.Value.ToString("MM/dd/yyyy"));
+            bookRoom.EndDate = Convert.ToDateTime(dtEndDate.Value.ToString("MM/dd/yyyy"));
+            
+        }
     }
 }
