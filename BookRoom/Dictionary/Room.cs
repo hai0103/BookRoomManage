@@ -52,11 +52,12 @@ namespace BookRoomManage
             DataRow row = Provider.Instance.ExcuteQuery("PROC_GetRoom", new { RoomID = roomID }).Rows[0];
             return new
             {
-                RoomNo = row[0].ToString(),
-                RoomName = row[1].ToString(),
-                RoomState = int.Parse(row[2].ToString()),
-                TypeRoomPrice = decimal.Parse(row[3].ToString()),
-                TypeRoomName = row[4].ToString()
+                RoomID = row[0],
+                RoomNo = row[1].ToString(),
+                RoomName = row[2].ToString(),
+                RoomState = int.Parse(row[3].ToString()),
+                TypeRoomPrice = decimal.Parse(row[4].ToString()),
+                TypeRoomName = row[5].ToString()
             };
 
         }

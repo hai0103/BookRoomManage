@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookRoomManage;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,22 @@ namespace BookRoomGUI
         public frmAddBookRoom()
         {
             InitializeComponent();
+        }
+
+        public void fillContentRoom(Guid id)
+        {
+            Room room = new Room();
+            var roomDetail = room.GetRoom(id);
+            System.Reflection.PropertyInfo pi = roomDetail.GetType().GetProperty("RoomNo");
+            String text = (String)(pi.GetValue(roomDetail, null));
+            txtRoomNo.Text = text;
+            pi = roomDetail.GetType().GetProperty("RoomName");
+            text = (String)(pi.GetValue(roomDetail, null));
+            txtRoomName.Text = text;
+            pi = roomDetail.GetType().GetProperty("TypeRoomPrice");
+            text = (pi.GetValue(roomDetail, null)).ToString();
+            txtPrice.Text = text;
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
