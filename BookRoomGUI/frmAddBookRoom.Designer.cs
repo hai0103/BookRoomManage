@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DateTimePicker dtStartDate;
-            System.Windows.Forms.DateTimePicker dateTimePicker2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddBookRoom));
+            this.dtStartDate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtBookRoomDetail = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
@@ -38,10 +37,11 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAddBookRoom = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtRoomID = new System.Windows.Forms.TextBox();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dtEndDate = new System.Windows.Forms.DateTimePicker();
+            this.txtCost = new System.Windows.Forms.TextBox();
+            this.txtDeposit = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtRoomName = new System.Windows.Forms.TextBox();
             this.txtRoomNo = new System.Windows.Forms.TextBox();
@@ -50,9 +50,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnCreateNewCustomer = new System.Windows.Forms.Button();
+            this.btnCalcCost = new System.Windows.Forms.Button();
+            this.btnCalcDeposit = new System.Windows.Forms.Button();
+            this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.txtNationality = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtCMT = new System.Windows.Forms.TextBox();
@@ -76,8 +76,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            dtStartDate = new System.Windows.Forms.DateTimePicker();
-            dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtCreateDate = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -85,25 +84,14 @@
             // 
             // dtStartDate
             // 
-            dtStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dtStartDate.Location = new System.Drawing.Point(485, 169);
-            dtStartDate.Name = "dtStartDate";
-            dtStartDate.Size = new System.Drawing.Size(125, 26);
-            dtStartDate.TabIndex = 9;
-            dtStartDate.UseWaitCursor = true;
-            dtStartDate.Value = new System.DateTime(2019, 11, 17, 0, 0, 0, 0);
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new System.Drawing.Point(485, 104);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new System.Drawing.Size(125, 26);
-            dateTimePicker2.TabIndex = 0;
-            dateTimePicker2.UseWaitCursor = true;
-            dateTimePicker2.Value = new System.DateTime(2019, 11, 17, 0, 0, 0, 0);
+            this.dtStartDate.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtStartDate.Location = new System.Drawing.Point(485, 169);
+            this.dtStartDate.Name = "dtStartDate";
+            this.dtStartDate.Size = new System.Drawing.Size(125, 26);
+            this.dtStartDate.TabIndex = 9;
+            this.dtStartDate.Value = new System.DateTime(2019, 11, 17, 0, 0, 0, 0);
             // 
             // panel1
             // 
@@ -170,7 +158,6 @@
             // 
             this.btnAddBookRoom.BackColor = System.Drawing.Color.White;
             this.btnAddBookRoom.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddBookRoom.Enabled = false;
             this.btnAddBookRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBookRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddBookRoom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -180,17 +167,19 @@
             this.btnAddBookRoom.TabIndex = 18;
             this.btnAddBookRoom.Text = "Book room";
             this.btnAddBookRoom.UseVisualStyleBackColor = false;
+            this.btnAddBookRoom.Click += new System.EventHandler(this.btnAddBookRoom_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.dtCreateDate);
+            this.panel3.Controls.Add(this.txtRoomID);
             this.panel3.Controls.Add(this.txtCustomerID);
-            this.panel3.Controls.Add(this.dateTimePicker1);
-            this.panel3.Controls.Add(dateTimePicker2);
-            this.panel3.Controls.Add(dtStartDate);
-            this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.dtEndDate);
+            this.panel3.Controls.Add(this.dtStartDate);
+            this.panel3.Controls.Add(this.txtCost);
+            this.panel3.Controls.Add(this.txtDeposit);
             this.panel3.Controls.Add(this.txtPrice);
             this.panel3.Controls.Add(this.txtRoomName);
             this.panel3.Controls.Add(this.txtRoomNo);
@@ -199,9 +188,9 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.btnCreateNewCustomer);
+            this.panel3.Controls.Add(this.btnCalcCost);
+            this.panel3.Controls.Add(this.btnCalcDeposit);
+            this.panel3.Controls.Add(this.btnSearchCustomer);
             this.panel3.Controls.Add(this.txtNationality);
             this.panel3.Controls.Add(this.txtEmail);
             this.panel3.Controls.Add(this.txtCMT);
@@ -233,6 +222,15 @@
             this.panel3.Size = new System.Drawing.Size(698, 466);
             this.panel3.TabIndex = 1;
             // 
+            // txtRoomID
+            // 
+            this.txtRoomID.Location = new System.Drawing.Point(154, 43);
+            this.txtRoomID.Multiline = true;
+            this.txtRoomID.Name = "txtRoomID";
+            this.txtRoomID.Size = new System.Drawing.Size(184, 28);
+            this.txtRoomID.TabIndex = 18;
+            this.txtRoomID.Visible = false;
+            // 
             // txtCustomerID
             // 
             this.txtCustomerID.Location = new System.Drawing.Point(154, 82);
@@ -242,36 +240,36 @@
             this.txtCustomerID.TabIndex = 10;
             this.txtCustomerID.Visible = false;
             // 
-            // dateTimePicker1
+            // dtEndDate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(485, 209);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(125, 26);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dtEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtEndDate.Location = new System.Drawing.Point(485, 209);
+            this.dtEndDate.Name = "dtEndDate";
+            this.dtEndDate.Size = new System.Drawing.Size(125, 26);
+            this.dtEndDate.TabIndex = 10;
             // 
-            // textBox6
+            // txtCost
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(485, 372);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 28);
-            this.textBox6.TabIndex = 14;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCost.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCost.Location = new System.Drawing.Point(485, 372);
+            this.txtCost.Multiline = true;
+            this.txtCost.Name = "txtCost";
+            this.txtCost.Size = new System.Drawing.Size(125, 28);
+            this.txtCost.TabIndex = 14;
+            this.txtCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox3
+            // txtDeposit
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(485, 411);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 28);
-            this.textBox3.TabIndex = 16;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDeposit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeposit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeposit.Location = new System.Drawing.Point(485, 411);
+            this.txtDeposit.Multiline = true;
+            this.txtDeposit.Name = "txtDeposit";
+            this.txtDeposit.Size = new System.Drawing.Size(125, 28);
+            this.txtDeposit.TabIndex = 16;
+            this.txtDeposit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPrice
             // 
@@ -364,44 +362,47 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Room No: -";
             // 
-            // button3
+            // btnCalcCost
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Window;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(609, 372);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(27, 28);
-            this.button3.TabIndex = 15;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCalcCost.BackColor = System.Drawing.SystemColors.Window;
+            this.btnCalcCost.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCalcCost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalcCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCalcCost.Image = ((System.Drawing.Image)(resources.GetObject("btnCalcCost.Image")));
+            this.btnCalcCost.Location = new System.Drawing.Point(609, 372);
+            this.btnCalcCost.Name = "btnCalcCost";
+            this.btnCalcCost.Size = new System.Drawing.Size(27, 28);
+            this.btnCalcCost.TabIndex = 15;
+            this.btnCalcCost.UseVisualStyleBackColor = false;
+            this.btnCalcCost.Click += new System.EventHandler(this.btnCalcCost_Click);
             // 
-            // button2
+            // btnCalcDeposit
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Window;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(609, 411);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(27, 28);
-            this.button2.TabIndex = 17;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCalcDeposit.BackColor = System.Drawing.SystemColors.Window;
+            this.btnCalcDeposit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCalcDeposit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalcDeposit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCalcDeposit.Image = ((System.Drawing.Image)(resources.GetObject("btnCalcDeposit.Image")));
+            this.btnCalcDeposit.Location = new System.Drawing.Point(609, 411);
+            this.btnCalcDeposit.Name = "btnCalcDeposit";
+            this.btnCalcDeposit.Size = new System.Drawing.Size(27, 28);
+            this.btnCalcDeposit.TabIndex = 17;
+            this.btnCalcDeposit.UseVisualStyleBackColor = false;
+            this.btnCalcDeposit.Click += new System.EventHandler(this.btnCalcDeposit_Click);
             // 
-            // btnCreateNewCustomer
+            // btnSearchCustomer
             // 
-            this.btnCreateNewCustomer.BackColor = System.Drawing.SystemColors.Window;
-            this.btnCreateNewCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCreateNewCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateNewCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCreateNewCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateNewCustomer.Image")));
-            this.btnCreateNewCustomer.Location = new System.Drawing.Point(311, 125);
-            this.btnCreateNewCustomer.Name = "btnCreateNewCustomer";
-            this.btnCreateNewCustomer.Size = new System.Drawing.Size(27, 28);
-            this.btnCreateNewCustomer.TabIndex = 0;
-            this.btnCreateNewCustomer.UseVisualStyleBackColor = false;
+            this.btnSearchCustomer.BackColor = System.Drawing.SystemColors.Window;
+            this.btnSearchCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnSearchCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchCustomer.Image")));
+            this.btnSearchCustomer.Location = new System.Drawing.Point(311, 125);
+            this.btnSearchCustomer.Name = "btnSearchCustomer";
+            this.btnSearchCustomer.Size = new System.Drawing.Size(27, 28);
+            this.btnSearchCustomer.TabIndex = 0;
+            this.btnSearchCustomer.UseVisualStyleBackColor = false;
+            this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click);
             // 
             // txtNationality
             // 
@@ -663,6 +664,15 @@
             this.button1.Text = "Book room";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // dtCreateDate
+            // 
+            this.dtCreateDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtCreateDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtCreateDate.Location = new System.Drawing.Point(485, 102);
+            this.dtCreateDate.Name = "dtCreateDate";
+            this.dtCreateDate.Size = new System.Drawing.Size(125, 26);
+            this.dtCreateDate.TabIndex = 19;
+            // 
             // frmAddBookRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -705,14 +715,14 @@
         private System.Windows.Forms.TextBox txtRoomNo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnCreateNewCustomer;
+        private System.Windows.Forms.Button btnSearchCustomer;
         private System.Windows.Forms.TextBox txtCustomerNo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtEndDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDeposit;
         private System.Windows.Forms.TextBox txtRoomName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -720,7 +730,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAddBookRoom;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtCost;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtCMT;
         private System.Windows.Forms.TextBox txtPhone;
@@ -736,7 +746,10 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtCustomerID;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCalcCost;
+        private System.Windows.Forms.Button btnCalcDeposit;
+        private System.Windows.Forms.DateTimePicker dtStartDate;
+        private System.Windows.Forms.TextBox txtRoomID;
+        private System.Windows.Forms.DateTimePicker dtCreateDate;
     }
 }

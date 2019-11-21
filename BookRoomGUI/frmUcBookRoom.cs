@@ -72,12 +72,12 @@ namespace BookRoomGUI
         }
         #endregion
 
-        void showAddBookRoom(Guid id)
+        void showAddBookRoom(Guid roomId)
         {
-            frmAddBookRoom add = new frmAddBookRoom();
-            
-            add.fillContentRoom(id);
-            add.Show();
+            frmAddBookRoom addBookRoom = new frmAddBookRoom();
+
+            addBookRoom.fillContentRoom(roomId);
+            addBookRoom.Show();
         }
 
         void click_Room(object sender, EventArgs e)
